@@ -1,16 +1,20 @@
 #ifndef C_SERVER_MOUSE_ACTIVITIES_H_
 #define C_SERVER_MOUSE_ACTIVITIES_H_
 
+#define COORDINATES 2
+#define CLICK_TYPE 4
+
 typedef union unMouseActivities
 {
-	int iCoords[2];
+	int iCoords[COORDINATES];
 	struct {
 		char chX[sizeof(int)];
 		char chY[sizeof(int)];
-		char chClickType[3];
+		char chClickType[CLICK_TYPE];
 	};
-	char chMessage[sizeof(int) * 2 + 3];
+	char chMessage[sizeof(int) * COORDINATES + CLICK_TYPE];// for '\0'
 } MouseActivities;
+
 
 #endif // !C_SERVER_MOUSE_ACTIVITIES_H_
 

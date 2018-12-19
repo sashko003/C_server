@@ -1,0 +1,2 @@
+all:
+	gcc main.c initSocket.c closeSocket.c mouseActivities.h header.h os.h -lX11 -o server
